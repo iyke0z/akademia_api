@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import router from './route'
 require('./bootstrap');
 window.Vue = require('vue').default;
-Vue.use(BootstrapVue)
+// Vue.use(BootstrapVue)
 
 
 // Sweet Alert
