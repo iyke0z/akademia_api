@@ -1,10 +1,7 @@
 <template>
     <div>
-
         <nav-bar/>
-
          <div class="main-content">
-
                 <div class="page-content">
                     <div class="container-fluid">
 
@@ -712,8 +709,8 @@
 
 
 
-            </div>
-            <footer-bar/>
+         </div>
+        <footer-bar/>
     </div>
 
 </template>
