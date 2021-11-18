@@ -26,7 +26,7 @@ class EventType extends Model
     // Model relationships
     public function branch()
     {
-    return $this->belongsTo(Branch::class, 'createdBy', 'id');
+    return $this->belongsTo(Branch::class, 'branchid', 'id');
     }
     public function created()
     {
