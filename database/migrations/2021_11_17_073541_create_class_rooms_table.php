@@ -15,6 +15,10 @@ class CreateClassRoomsTable extends Migration
     {
         Schema::create('class_rooms', function (Blueprint $table) {
             $table->id();
+            $table->string('classroom');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

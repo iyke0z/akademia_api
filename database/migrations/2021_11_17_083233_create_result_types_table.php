@@ -15,6 +15,11 @@ class CreateResultTypesTable extends Migration
     {
         Schema::create('result_types', function (Blueprint $table) {
             $table->id();
+            $table->string('resulttype');
+            $table->string('percentage');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

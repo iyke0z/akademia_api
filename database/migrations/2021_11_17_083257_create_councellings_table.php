@@ -15,6 +15,11 @@ class CreateCouncellingsTable extends Migration
     {
         Schema::create('councellings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('userid')->constrained('users');
+            $table->foreignId('councellorid')->constrained('users');
+            $table->string('subject');
+            $table->string('message');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

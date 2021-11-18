@@ -15,6 +15,10 @@ class CreateGradesTable extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
+            $table->string('grades');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

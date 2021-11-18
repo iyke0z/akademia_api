@@ -15,6 +15,10 @@ class CreateSubjectClassGroupsTable extends Migration
     {
         Schema::create('subject__class_groups', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subjectid')->constrained('subjects');
+            $table->foreignId('classgroupid')->constrained('class_groups');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

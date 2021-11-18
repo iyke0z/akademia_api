@@ -15,6 +15,10 @@ class CreateRanksTable extends Migration
     {
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('branchid')->constrained('branches');
+            $table->string('rank');
+            $table->string('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

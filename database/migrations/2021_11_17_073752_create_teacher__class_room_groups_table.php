@@ -13,8 +13,13 @@ class CreateTeacherClassRoomGroupsTable extends Migration
      */
     public function up()
     {
+        // for form or class managers (staff)
         Schema::create('teacher__class_room_groups', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('teacherid')->constrained('users');
+            $table->foreignId('classroomgroupid')->constrained('class_room_groups');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateParentStudentsTable extends Migration
     {
         Schema::create('parent__students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('parentid')->constrained('users');
+            $table->foreignId('studentid')->constrained('users');
+            $table->foreignId('createdBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

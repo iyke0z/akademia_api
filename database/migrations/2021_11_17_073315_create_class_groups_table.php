@@ -15,6 +15,9 @@ class CreateClassGroupsTable extends Migration
     {
         Schema::create('class_groups', function (Blueprint $table) {
             $table->id();
+            $table->string('classgroupname');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdById')->constrained('users');            $table->softDeletes();
             $table->timestamps();
         });
     }

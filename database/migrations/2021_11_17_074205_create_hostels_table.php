@@ -15,6 +15,11 @@ class CreateHostelsTable extends Migration
     {
         Schema::create('hostels', function (Blueprint $table) {
             $table->id();
+            $table->string('hostelname');
+            $table->text('hosteldescription');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateExitTypesTable extends Migration
     {
         Schema::create('exit_types', function (Blueprint $table) {
             $table->id();
+            $table->string('exittype');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

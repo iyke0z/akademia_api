@@ -15,6 +15,13 @@ class CreateAttendancesTable extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('studentuseraccount')->constrained('users');
+            $table->foreignId('classid')->constrained('class_room_groups');
+            $table->foreignId('subject')->constrained('subject__class_groups');
+            $table->enum('status', ['present', 'absent']);
+            $table->string('date');
+            $table->foreignId('absentedBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

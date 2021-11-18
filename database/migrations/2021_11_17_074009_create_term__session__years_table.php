@@ -15,6 +15,11 @@ class CreateTermSessionYearsTable extends Migration
     {
         Schema::create('term__session__years', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('termid')->constrained('terms');
+            $table->foreignId('sessionid')->constrained('academic_sessions');
+            $table->foreignId('yearid')->constrained('academic_years');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->string('no_of_days')->nullable();
+            $table->string('startdate');
+            $table->string('enddate');
+            $table->enum('approval_status', ['approved', 'not-approved']);
+            $table->foreignId('createdById')->constrained('users');
+            $table->foreignId('approvedBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

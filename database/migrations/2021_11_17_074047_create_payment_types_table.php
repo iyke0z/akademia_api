@@ -15,6 +15,10 @@ class CreatePaymentTypesTable extends Migration
     {
         Schema::create('payment_types', function (Blueprint $table) {
             $table->id();
+            $table->string('paymenttype');
+            $table->foreignId('createdById')->constrained('users');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateUserPriviledgesTable extends Migration
     {
         Schema::create('user__priviledges', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('userid')->constrained('users');
+            $table->foreignId('priviledges_id')->constrained('priviledges');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('assignedBy')->constrained('users');
             $table->timestamps();
         });
     }

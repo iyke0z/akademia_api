@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHostelReportsTable extends Migration
+class CreateAcademicYearsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateHostelReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hostel_reports', function (Blueprint $table) {
+        Schema::create('academic_years', function (Blueprint $table) {
             $table->id();
+            $table->string('year');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->string('created_by')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateHostelReportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hostel_reports');
+        Schema::dropIfExists('academic_years');
     }
 }

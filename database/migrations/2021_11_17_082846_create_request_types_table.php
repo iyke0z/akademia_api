@@ -15,6 +15,10 @@ class CreateRequestTypesTable extends Migration
     {
         Schema::create('request_types', function (Blueprint $table) {
             $table->id();
+            $table->string('reqtype');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateFeedbackTable extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('fromuserid')->constrained('users');
+            $table->string('subject');
+            $table->string('message');
+            $table->foreignId('touserid')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

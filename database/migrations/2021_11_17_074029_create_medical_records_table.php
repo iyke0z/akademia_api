@@ -15,6 +15,14 @@ class CreateMedicalRecordsTable extends Migration
     {
         Schema::create('medical_records', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('userid')->constrained('users');
+            $table->enum('genotype',['AA', 'AS', 'AC', 'SS']);
+            $table->enum('blood_group', ['A+ve', 'B+ve', 'AB+ve', '0+ve', 'A-ve', 'B-ve', 'AB-ve', '0-ve']);
+            $table->string('height');
+            $table->string('weight');
+            $table->text('comment');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

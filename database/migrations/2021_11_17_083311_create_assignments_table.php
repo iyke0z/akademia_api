@@ -15,6 +15,10 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subjectid')->constrained('subject__class_groups');
+            $table->string('description');
+            $table->foreignId('createdBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

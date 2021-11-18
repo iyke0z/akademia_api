@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserExitsTable extends Migration
+class CreateClassGroupTeachersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUserExitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_exits', function (Blueprint $table) {
+        Schema::create('class_group_teachers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('useraccountid')->constrained('users');
-            $table->foreignId('exittypeid')->constrained('exit_types');
-            $table->string('reason');
-            $table->string('date');
+            $table->foreignId('teacher_subject_id')->constrained('subject__teachers');
+            $table->foreignId('classgroupid')->constrained('class_groups');
             $table->foreignId('createdById')->constrained('users');
             $table->softDeletes();
             $table->timestamps();
@@ -32,6 +30,6 @@ class CreateUserExitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_exits');
+        Schema::dropIfExists('class_group_teachers');
     }
 }

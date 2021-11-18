@@ -15,6 +15,10 @@ class CreateSubjectTeachersTable extends Migration
     {
         Schema::create('subject__teachers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subjectid')->constrained('subjects');
+            $table->foreignId('tutorid')->constrained('users');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateEventTypesTable extends Migration
     {
         Schema::create('event_types', function (Blueprint $table) {
             $table->id();
+            $table->string('event');
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdBy')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreateAcademicSessionsTable extends Migration
     {
         Schema::create('academic_sessions', function (Blueprint $table) {
             $table->id();
+            $table->string('session');
+            $table->string('startdate');
+            $table->string('enddate');
+            $table->enum('status', ['active', 'inactive']);
+            $table->foreignId('branchid')->constrained('branches');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

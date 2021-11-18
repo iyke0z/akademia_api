@@ -15,6 +15,10 @@ class CreateStudentClassRoomGroupsTable extends Migration
     {
         Schema::create('student__class_room_groups', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('studentid')->constrained('users');
+            $table->foreignId('classroomgroupid')->constrained('class_room_groups');
+            $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
