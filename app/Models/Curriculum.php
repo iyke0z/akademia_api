@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class Curriculum extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasApiTokens;
-    
+
     protected $fillable = [
         'subject_teacher',
         'file_url',
@@ -30,11 +30,11 @@ class Curriculum extends Model
     {
     return $this->belongsTo(Subject_Teacher::class, 'subject_teacher', 'id');
     }
-    public function created()
+    public function createdBy()
     {
     return $this->belongsTo(User::class, 'createdById', 'id');
     }
-    public function approved()
+    public function approvedBy()
     {
     return $this->belongsTo(User::class, 'approvedBy', 'id');
     }

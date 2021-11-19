@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class ParentProfile extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasApiTokens;
-    
+
     protected $fillable = [
         'useraccountid',
         'title',
@@ -68,7 +68,7 @@ class ParentProfile extends Model
     {
     return $this->belongsTo(City::class, 'cityid', 'id');
     }
-    public function create()
+    public function createdby()
     {
     return $this->belongsTo(User::class, 'createdById', 'id');
     }

@@ -31,7 +31,7 @@ class CreateStaffProfilesTable extends Migration
             $table->foreignId('stateid')->constrained('states');
             $table->foreignId('cityid')->constrained('cities');
             $table->string('contactemail');
-            $table->string('conacttel');
+            $table->string('contacttel');
             $table->string('photo');
             $table->foreignId('rankid')->constrained('ranks');
             $table->foreignId('createdById')->constrained('users');

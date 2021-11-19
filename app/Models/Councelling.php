@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class Councelling extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasApiTokens;
-    
+
     protected $fillable = [
         'userid',
         'councellorid',
@@ -29,7 +29,7 @@ class Councelling extends Model
     {
     return $this->belongsTo(User::class, 'councellorid', 'id');
     }
-    public function user()
+    public function sender()
     {
     return $this->belongsTo(User::class, 'userid', 'id');
     }

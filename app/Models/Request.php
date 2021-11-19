@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens as SanctumHasApiTokens;
 
 class Request extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    use HasApiTokens;
-    
+    use HasFactory, SoftDeletes, SanctumHasApiTokens;
+
     protected $fillable = [
         'no_of_days',
         'startdate',
@@ -27,12 +26,10 @@ class Request extends Model
     ];
 
     // Model relationships
-    public function created()
-    {
-    return $this->belongsTo(User::class, 'createdById', 'id');
+    public function createdBy(){
+        return $this->belongsTo(User::class, 'createdById', 'id');
     }
-    public function approved()
-    {
-    return $this->belongsTo(User::class, 'approvedBy', 'id');
+    public function approvedBy(){
+        return $this->belongsTo(User::class, 'approvedBy', 'id');
     }
 }

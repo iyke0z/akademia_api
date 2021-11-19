@@ -19,6 +19,7 @@ class CreateSubjectsTable extends Migration
             $table->string('subject_alias')->nullable();
             $table->foreignId('branchid')->constrained('branches');
             $table->foreignId('createdById')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

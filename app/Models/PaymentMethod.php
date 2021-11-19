@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class PaymentMethod extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasApiTokens;
-    
+
     protected $fillable = [
         'method',
         'branchid',
@@ -28,7 +28,7 @@ class PaymentMethod extends Model
     {
     return $this->belongsTo(Branch::class, 'branchid', 'id');
     }
-    public function created()
+    public function createdBy()
     {
     return $this->belongsTo(User::class, 'createdById', 'id');
     }

@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class Priority extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasApiTokens;
-    
+
     protected $fillable = [
         'priority',
         'createdBy',
@@ -23,8 +23,7 @@ class Priority extends Model
     ];
 
     // Model relationships
-    public function created()
-    {
-    return $this->belongsTo(User::class, 'createdBy', 'id');
+    public function createdBy(){
+        return $this->belongsTo(User::class, 'createdBy');
     }
 }

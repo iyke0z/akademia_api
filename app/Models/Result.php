@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class Result extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    use HasApiTokens;
-    
+    use HasFactory, SoftDeletes, HasApiTokens;
+
     protected $fillable = [
         'restult_typeid',
         'studentid',
@@ -27,24 +25,19 @@ class Result extends Model
     ];
 
     // Model relationships
-    public function resultType()
-    {
-    return $this->belongsTo(RequestType::class, 'branchid', 'id');
+    public function resultType(){
+        return $this->belongsTo(ResultType::class, 'restult_typeid');
     }
-    public function student()
-    {
-    return $this->belongsTo(User::class, 'studentid', 'id');
+    public function student(){
+        return $this->belongsTo(User::class, 'studentid');
     }
-    public function academicYear()
-    {
-    return $this->belongsTo(Term_Session_Year::class, 'academic_periodid', 'id');
+    public function academicYear(){
+        return $this->belongsTo(Term_Session_Year::class, 'academic_periodid');
     }
-    public function subject()
-    {
-    return $this->belongsTo(Subject::class, 'subjectid', 'id');
+    public function subject(){
+        return $this->belongsTo(Subject_ClassGroup::class, 'subjectid');
     }
-    public function created()
-    {
-    return $this->belongsTo(User::class, 'createdById', 'id');
+    public function createdBy(){
+        return $this->belongsTo(User::class, 'createdById');
     }
 }

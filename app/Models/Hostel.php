@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class Hostel extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasApiTokens;
-    
+
     protected $fillable = [
         'hostelname',
         'hosteldescription',
@@ -27,10 +27,10 @@ class Hostel extends Model
     // Model relationships
     public function branch()
     {
-    return $this->belongsTo(Branch::class, 'branchid', 'id');
+        return $this->belongsTo(Branch::class, 'branchid', 'id');
     }
-    public function user()
+    public function createdBy()
     {
-    return $this->belongsTo(User::class, 'createdBy', 'id');
+        return $this->belongsTo(User::class, 'createdBy', 'id');
     }
 }

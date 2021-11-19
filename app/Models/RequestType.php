@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 
 class RequestType extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    use HasApiTokens;
-    
+    use HasFactory, SoftDeletes, HasApiTokens;
+
+
     protected $fillable = [
         'branchid',
         'reqtype',
@@ -24,12 +23,11 @@ class RequestType extends Model
     ];
 
     // Model relationships
-    public function branch()
-    {
-    return $this->belongsTo(Branch::class, 'branchid', 'id');
+    public function branch(){
+        return $this->belongsTo(Branch::class, 'branchid');
     }
-    public function created()
-    {
-    return $this->belongsTo(User::class, 'createdById', 'id');
+
+    public function createdBy(){
+        return $this->belongsTo(User::class, 'createdById');
     }
 }
