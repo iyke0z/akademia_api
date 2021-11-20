@@ -30,7 +30,7 @@ class CreateParentProfilesTable extends Migration
             $table->foreignId('countryid')->constrained('countries');
             $table->foreignId('stateid')->constrained('states');
             $table->foreignId('cityid')->constrained('cities');
-            $table->string('contactemail');
+            $table->string('contactemail')->nullable();
             $table->string('conacttel');
             $table->string('photo');
             $table->foreignId('createdById')->constrained('users');

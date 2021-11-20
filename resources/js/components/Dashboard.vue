@@ -716,8 +716,8 @@
 </template>
 
 <script>
-import FooterBar from '../Footer.vue'
-import NavBar from '../NavBar.vue'
+import FooterBar from './Footer.vue'
+import NavBar from './NavBar.vue'
 export default {
     components: {FooterBar, NavBar},
 

@@ -72,6 +72,7 @@
                                         </div>
 
                                         <div class="mt-4">
+                                        <p class="text-danger">{{errors}}</p>
                                                 <div v-if="this.step==1">
                                                     <div class="mb-3">
                                                         <label for="schoolname" class="form-label">School Name <span class="text-danger">*</span></label>
@@ -99,47 +100,47 @@
                                                          <select
                                                          class="form-control"
                                                          v-model="schooldata.countryid"
-                                                         @change="getState(schooldata.countryid)"
+                                                         v-for="country in countries" :key="country.id"
+                                                         @change="getState(country.id)"
                                                          >
                                                                 <option>Select</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
+                                                                <option :value="country.id"> {{ country.country   }}</option>
                                                         </select>
                                                 </div>
                                                       <div class="mb-3 col-6">
-                                                        <label class="form-label">State <span class="text-danger">*</span></label>
+                                                        <label class="form-label" v-if="this.states != null">State <span class="text-danger">*</span></label>
                                                         <select
                                                         class="form-control"
                                                         v-model="schooldata.stateid"
-                                                        @change="getCity(schooldata.countryid)">
-                                                                <option >Select</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
+                                                        v-for="statee in states" :key="statee.id"
+                                                        @change="getCity(statee.id)">
+                                                                <option>Select</option>
+                                                                <option :value="statee.id">{{statee.state}}</option>
                                                         </select>
 
                                                     </div>
                                                        <div class="mb-3 col-6">
-                                                        <label class="form-label">City <span class="text-danger">*</span></label>
+                                                        <label class="form-label" v-if="this.cities != null">City <span class="text-danger">*</span></label>
                                                         <select
                                                         class="form-control"
                                                         v-model="schooldata.cityid"
+                                                        v-for="city in cities" :key="city.id"
                                                         @change="checkAnswered">
                                                                 <option>Select</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
+                                                                <option :value="city.id">{{ city.city }}</option>
                                                         </select>
 
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <!-- photo, motto, email.... -->
+                                                <!--  motto, email.... -->
                                                 <div v-if="this.step==2">
-                                                    <div class="mb-3">
+                                                    <!-- <div class="mb-3">
                                                         <label for="useremail" class="form-label">School Logo</label>
-                                                        <input type="file" class="form-control" id="useremail" :value="photo" placeholder="School Photo"
+                                                        <input type="file" class="form-control" id="useremail" v-model="schooldata.schoollogo" placeholder="School Photo"
                                                         >
-                                                    </div>
+                                                    </div> -->
 
                                                     <div class="mb-3">
                                                         <label for="username" class="form-label">Motto <span class="text-danger">*</span></label>
@@ -208,7 +209,7 @@
                                                 <div class="row">
                                                     <button class="btn btn-warning waves-effect waves-light col-6" v-if="this.step != 1 " @click.prevent="prevStep"> Previous Step </button>
                                                     <button class="btn btn-primary waves-effect waves-light col-6 mr-2" v-if="this.step != this.totalsteps" @click.prevent="nextStep" :disabled="checkFilled"> Next Step </button>
-                                                    <button class="btn btn-primary waves-effect waves-light col-6" v-if="this.step == this.totalsteps" type="submit">Register</button>
+                                                    <button class="btn btn-primary waves-effect waves-light col-6" v-if="this.step == this.totalsteps" type="submit" @click="submitData">Register</button>
                                                 </div>
                                             <div class="text-center">
                                                 <p>Already have an account ? <router-link to="/"  class="fw-medium text-primary"> Login </router-link> </p>
@@ -263,12 +264,18 @@ export default {
                 branchname:'Head Branch',
                 branchaddress:null,
             },
-            submit:[]
+            submit:[],
+            errors:null,
+            countries:null,
+            states:null,
+            cities:null
+
         }
     },
 
     methods: {
         checkAnswered(){
+            this.errors = null
             if(this.step == 1 && this.schooldata.schoolname != null && this.schooldata.year_of_establishment != null && this.schooldata.address != null && this.schooldata.countryid != null && this.schooldata.stateid != null && this.schooldata.cityid != null){
                 this.checkFilled = false
             }else if(this.step == 2 && this.schooldata.schoolmotto != null && this.schooldata.schoolemail != null && this.schooldata.schooltel != null){
@@ -280,11 +287,25 @@ export default {
             }
         },
         getCountry(){
+            axios.get('api/country/').then((result) => {
+                this.countries = result.data
+            }).catch((err) => {
 
+            });
         },
-        getState(){
+        getState(countryid){
+            axios.get('api/state/'+countryid).then((result) => {
+                this.states = result.data
+            }).catch((err) => {
+
+            });
         },
-        getCity(){
+        getCity(stateid){
+             axios.get('api/city/'+stateid).then((result) => {
+                this.cities = result.data
+            }).catch((err) => {
+
+            });
         },
 
         nextStep(){
@@ -293,6 +314,15 @@ export default {
         },
         prevStep(){
             this.step = this.step - 1
+        },
+        submitData(){
+            this.submit = [this.schooldata, this.useraccessData, this.branchData];
+            axios.post('api/schregister', this.submit).then((result) => {
+                console.log('loggedin')
+            }).catch((err) => {
+                this.errors = err.response.data.errors[0][0]
+            });
+
         }
 
     },
@@ -300,6 +330,8 @@ export default {
 
     created() {
         this.nextStep()
+        this.getCountry()
+
     },
 
 

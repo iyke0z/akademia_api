@@ -30,7 +30,7 @@ class CreateStudentProfilesTable extends Migration
             $table->foreignId('countryid')->constrained('countries');
             $table->foreignId('stateid')->constrained('states');
             $table->foreignId('cityid')->constrained('cities');
-            $table->string('contactemail');
+            $table->string('contactemail')->nullable();
             $table->string('contacttel');
             $table->enum('payment_status', ['paid', 'not-paid']);
             $table->string('photo');

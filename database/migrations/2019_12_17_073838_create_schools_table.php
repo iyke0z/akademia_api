@@ -16,8 +16,8 @@ class CreateSchoolsTable extends Migration
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
             $table->string('schoolname');
-            $table->string('schoolemail');
-            $table->string('schooltel');
+            $table->string('schoolemail')->unique();
+            $table->string('schooltel')->unique();
             $table->string('schoollogo')->nullable();
             $table->string('schoolmotto');
             $table->string('address');
@@ -28,10 +28,11 @@ class CreateSchoolsTable extends Migration
             $table->string('schoolzone')->nullable();
             $table->string('schoolchapter')->nullable();
             $table->text('associationAffiliation')->nullable();
-            $table->string('educationDistrict');
+            $table->string('educationDistrict')->nullable();
             // $table->foreignId('createdById')->constrained('users')->nullable();
             $table->softDeletes();
             $table->timestamps();
+
         });
     }
 

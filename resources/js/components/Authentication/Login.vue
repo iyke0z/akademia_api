@@ -70,9 +70,9 @@
                                             <h5 class="text-primary">Welcome Back !</h5>
                                             <p class="text-muted">Sign in to continue to Akademia.</p>
                                         </div>
-
                                         <div class="mt-4">
-                                            <form action="index.html">
+                                        <p class="text-danger">{{errors}}</p>
+                                            <form >
 
                                                 <div class="mb-3">
                                                     <label for="username" class="form-label">Username</label>
@@ -100,7 +100,7 @@
                                                 </div>
 
                                                 <div class="mt-3 d-grid">
-                                                    <button class="btn btn-primary waves-effect waves-light" type="submit" :disabled="checkFilled">Log In</button>
+                                                    <button class="btn btn-primary waves-effect waves-light" type="submit" :disabled="checkFilled" @click.prevent="login">Log In</button>
                                                 </div>
 
                                             </form>
@@ -140,18 +140,28 @@ export default {
             logindata: {
                 username:null,
                 password:null,
-            }
+            },
+            errors:null
         }
     },
 
     methods: {
         checkInput(){
+            this.errors = null
             if(this.logindata.username != null && this.logindata.password != null){
                 this.checkFilled = false
             }else{
                 this.checkFilled = true
             }
+        },
+        login(){
+            axios.post('api/login', this.logindata).then((result) => {
+                this.$router.push({name: 'Dashboard'})
+            }).catch((err) => {
+                this.errors = err.response.data.errors[0][0]
+                });
         }
+
     },
 
 }
