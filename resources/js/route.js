@@ -5,10 +5,11 @@ import SchoolDashboard from './components/school/Dashboard.vue'
 import NavBar from './components/NavBar.vue'
 
 let routes = [
-    { path: '/school-registration', component:SchoolRegister, name:'SchoolRegister'},
+    { path: '/register', component:SchoolRegister, name:'SchoolRegister'},
     { path: '/', component:Login, name:'login'},
     { path: '/dashboard', component: SchoolDashboard, name:'SchoolDashboard'},
-    { path: '/nav', component: NavBar, name:'NavBar'}
+    { path: '/nav', component: NavBar, name:'NavBar'},
+
 ]
 
 const router = new VueRouter({

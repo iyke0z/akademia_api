@@ -18,9 +18,9 @@ class CreateBranchesTable extends Migration
             $table->string('branchname');
             $table->foreignId('schoolid')->constrained('schools');
             $table->string('branchaddress');
-            $table->foreignId('countryid')->constrained('countries');
-            $table->foreignId('stateid')->constrained('states');
-            $table->foreignId('cityid')->constrained('cities');
+            $table->foreignId('countryid')->constrained('countries')->nullable();
+            $table->foreignId('stateid')->constrained('states')->nullable();
+            $table->foreignId('cityid')->constrained('cities')->nullable();
             $table->string('branchtel')->nullable();
             // $table->foreignId('createdById')->constrained('users')->nullable();
             $table->softDeletes();
