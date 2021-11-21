@@ -193,12 +193,12 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" key="t-menu">Menu</li>
+                            <li class="menu-title" key="t-menu">Admin Menu</li>
 
                             <li>
-                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect">
-                                    <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
-                                    <span key="t-dashboards">Dashboards</span>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">School</span>
                                 </a>
                                 <ul class="sub-menu collapse" id="dashboardmenu" aria-expanded="false">
                                     <li><a href="index.html" key="t-default">Default</a></li>
@@ -208,41 +208,33 @@
                                 </ul>
                             </li>
 
-                            <li>
-                                <a href="#layout-menu" data-toggle="collapse" class="has-arrow waves-effect">
-                                    <i class="bx bx-layout"></i>
-                                    <span key="t-layouts">Layouts</span>
-                                </a>
-                                <ul class="sub-menu collapse" id="layout-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="" class="has-arrow" key="t-vertical">Vertical</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Light Sidebar</a></li>
-                                            <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                            <li><a href="layouts-icon-sidebar.html" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                            <li><a href="layouts-boxed.html" key="t-boxed-width">Boxed Width</a></li>
-                                            <li><a href="layouts-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-colored-sidebar.html" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                            <li><a href="layouts-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
 
-                                    <li>
-                                        <a href="#" class="has-arrow" key="t-horizontal">Horizontal</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-horizontal.html" key="t-horizontal">Horizontal</a></li>
-                                            <li><a href="layouts-hori-topbar-light.html" key="t-topbar-light">Topbar light</a></li>
-                                            <li><a href="layouts-hori-boxed-width.html" key="t-boxed-width">Boxed width</a></li>
-                                            <li><a href="layouts-hori-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-hori-colored-header.html" key="t-colored-topbar">Colored Header</a></li>
-                                            <li><a href="layouts-hori-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li class="menu-title" key="t-menu">Teacher Menu</li>
+                            <li>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Submit Curricula</span>
+                                </a>
+
                             </li>
 
+                            <li class="menu-title" key="t-menu">Student Menu</li>
+                            <li>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Veiw Time Table</span>
+                                </a>
 
+                            </li>
 
+                            <li class="menu-title" key="t-menu">Parent Menu</li>
+                            <li>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">View Child Result</span>
+                                </a>
+
+                            </li>
 
 
                         </ul>

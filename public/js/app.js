@@ -3666,14 +3666,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -46566,30 +46558,27 @@ var render = function () {
             },
             [
               _c("li", { key: "t-menu", staticClass: "menu-title" }, [
-                _vm._v("Menu"),
+                _vm._v("Admin Menu"),
               ]),
               _vm._v(" "),
               _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "waves-effect",
-                    attrs: {
-                      href: "#dashboardmenu",
-                      "data-toggle": "collapse",
-                    },
-                  },
-                  [
-                    _c("i", { staticClass: "bx bx-home-circle" }),
-                    _c(
-                      "span",
-                      { staticClass: "badge rounded-pill bg-info float-end" },
-                      [_vm._v("04")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { key: "t-dashboards" }, [_vm._v("Dashboards")]),
-                  ]
-                ),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [_vm._v("School")]),
+                      ]
+                    )
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "ul",
@@ -46642,219 +46631,64 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
+              _c("li", { key: "t-menu", staticClass: "menu-title" }, [
+                _vm._v("Teacher Menu"),
+              ]),
+              _vm._v(" "),
               _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "has-arrow waves-effect",
-                    attrs: { href: "#layout-menu", "data-toggle": "collapse" },
-                  },
-                  [
-                    _c("i", { staticClass: "bx bx-layout" }),
-                    _vm._v(" "),
-                    _c("span", { key: "t-layouts" }, [_vm._v("Layouts")]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "sub-menu collapse",
-                    attrs: { id: "layout-menu", "aria-expanded": "true" },
-                  },
-                  [
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          key: "t-vertical",
-                          staticClass: "has-arrow",
-                          attrs: { href: "" },
-                        },
-                        [_vm._v("Vertical")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        {
-                          staticClass: "sub-menu",
-                          attrs: { "aria-expanded": "true" },
-                        },
-                        [
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-light-sidebar",
-                                attrs: { href: "layouts-light-sidebar.html" },
-                              },
-                              [_vm._v("Light Sidebar")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-compact-sidebar",
-                                attrs: { href: "layouts-compact-sidebar.html" },
-                              },
-                              [_vm._v("Compact Sidebar")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-icon-sidebar",
-                                attrs: { href: "layouts-icon-sidebar.html" },
-                              },
-                              [_vm._v("Icon Sidebar")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-boxed-width",
-                                attrs: { href: "layouts-boxed.html" },
-                              },
-                              [_vm._v("Boxed Width")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-preloader",
-                                attrs: { href: "layouts-preloader.html" },
-                              },
-                              [_vm._v("Preloader")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-colored-sidebar",
-                                attrs: { href: "layouts-colored-sidebar.html" },
-                              },
-                              [_vm._v("Colored Sidebar")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-scrollable",
-                                attrs: { href: "layouts-scrollable.html" },
-                              },
-                              [_vm._v("Scrollable")]
-                            ),
-                          ]),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          key: "t-horizontal",
-                          staticClass: "has-arrow",
-                          attrs: { href: "#" },
-                        },
-                        [_vm._v("Horizontal")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        {
-                          staticClass: "sub-menu",
-                          attrs: { "aria-expanded": "true" },
-                        },
-                        [
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-horizontal",
-                                attrs: { href: "layouts-horizontal.html" },
-                              },
-                              [_vm._v("Horizontal")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-topbar-light",
-                                attrs: {
-                                  href: "layouts-hori-topbar-light.html",
-                                },
-                              },
-                              [_vm._v("Topbar light")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-boxed-width",
-                                attrs: {
-                                  href: "layouts-hori-boxed-width.html",
-                                },
-                              },
-                              [_vm._v("Boxed width")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-preloader",
-                                attrs: { href: "layouts-hori-preloader.html" },
-                              },
-                              [_vm._v("Preloader")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-colored-topbar",
-                                attrs: {
-                                  href: "layouts-hori-colored-header.html",
-                                },
-                              },
-                              [_vm._v("Colored Header")]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                key: "t-scrollable",
-                                attrs: { href: "layouts-hori-scrollable.html" },
-                              },
-                              [_vm._v("Scrollable")]
-                            ),
-                          ]),
-                        ]
-                      ),
-                    ]),
-                  ]
-                ),
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Submit Curricula"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+              ]),
+              _vm._v(" "),
+              _c("li", { key: "t-menu", staticClass: "menu-title" }, [
+                _vm._v("Student Menu"),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Veiw Time Table"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+              ]),
+              _vm._v(" "),
+              _c("li", { key: "t-menu", staticClass: "menu-title" }, [
+                _vm._v("Parent Menu"),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("View Child Result"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
               ]),
             ]
           ),
