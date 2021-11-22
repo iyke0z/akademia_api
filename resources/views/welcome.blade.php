@@ -56,6 +56,11 @@
         <script src="{{ asset('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
         <script src="{{ asset('assets/libs/@chenfengyuan/datepicker/datepicker.min.js') }}"></script>
 
+        {{--  <!-- form repeater js -->  --}}
+        <script src="assets/libs/jquery.repeater/jquery.repeater.min.js"></script>
+
+        <script src="assets/js/pages/form-repeater.int.js"></script>
+
         {{--  <!-- form advanced init -->  --}}
         <script src="{{ asset('assets/js/pages/form-advanced.init.js') }}"></script>
 
