@@ -156,7 +156,9 @@ export default {
         },
         login(){
             axios.post('api/login', this.logindata).then((result) => {
-                this.$router.push({name: 'Dashboard'})
+                // this.$router.push({name: 'Dashboard'})
+                window.location.href = '/dashboard'
+
             }).catch((err) => {
                 this.errors = err.response.data.errors[0][0]
                 });

@@ -196,17 +196,48 @@
                             <li class="menu-title" key="t-menu">Admin Menu</li>
 
                             <li>
-                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                               <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
                                     <i class="bx bx-home-circle"></i>
                                     <span key="t-dashboards">School</span>
                                 </a>
-                                <ul class="sub-menu collapse" id="dashboardmenu" aria-expanded="false">
-                                    <li><a href="index.html" key="t-default">Default</a></li>
-                                    <li><a href="dashboard-saas.html" key="t-saas">Saas</a></li>
-                                    <li><a href="dashboard-crypto.html" key="t-crypto">Crypto</a></li>
-                                    <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
-                                </ul>
-                            </li>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Branches</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Class Groups</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Class Rooms</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Students</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Staff and Tutors</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Parents</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Time Table</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Calendar</span>
+                                </a>
+                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Hostel</span>
+                                </a>
+
+
 
 
                             <li class="menu-title" key="t-menu">Teacher Menu</li>
@@ -215,7 +246,26 @@
                                     <i class="bx bx-layout"></i>
                                     <span key="t-layouts">Submit Curricula</span>
                                 </a>
-
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Attendance</span>
+                                </a>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Upload Notes</span>
+                                </a>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Assignment</span>
+                                </a>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Manage Class Room</span>
+                                </a>
+                                <a href="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Manage Subject Students</span>
+                                </a>
                             </li>
 
                             <li class="menu-title" key="t-menu">Student Menu</li>

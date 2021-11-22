@@ -2260,9 +2260,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post('api/login', this.logindata).then(function (result) {
-        _this.$router.push({
-          name: 'Dashboard'
-        });
+        // this.$router.push({name: 'Dashboard'})
+        window.location.href = '/dashboard';
       })["catch"](function (err) {
         _this.errors = err.response.data.errors[0][0];
       });
@@ -3418,6 +3417,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46580,57 +46629,184 @@ var render = function () {
                     )
                   : _vm._e(),
                 _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "sub-menu collapse",
-                    attrs: { id: "dashboardmenu", "aria-expanded": "false" },
-                  },
-                  [
-                    _c("li", [
-                      _c(
-                        "a",
-                        { key: "t-default", attrs: { href: "index.html" } },
-                        [_vm._v("Default")]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          key: "t-saas",
-                          attrs: { href: "dashboard-saas.html" },
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
                         },
-                        [_vm._v("Saas")]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          key: "t-crypto",
-                          attrs: { href: "dashboard-crypto.html" },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Branches"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
                         },
-                        [_vm._v("Crypto")]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          key: "t-blog",
-                          attrs: { href: "dashboard-blog.html" },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Class Groups"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
                         },
-                        [_vm._v("Blog")]
-                      ),
-                    ]),
-                  ]
-                ),
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Class Rooms"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Students"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Staff and Tutors"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Parents"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Time Table"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [
+                          _vm._v("Calendar"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.user.roleid == 1
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: {
+                          href: "#dashboardmenu",
+                          "data-toggle": "collapse",
+                        },
+                      },
+                      [
+                        _c("i", { staticClass: "bx bx-home-circle" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-dashboards" }, [_vm._v("Hostel")]),
+                      ]
+                    )
+                  : _vm._e(),
               ]),
-              _vm._v(" "),
               _c("li", { key: "t-menu", staticClass: "menu-title" }, [
                 _vm._v("Teacher Menu"),
               ]),
@@ -46645,6 +46821,76 @@ var render = function () {
                         _vm._v(" "),
                         _c("span", { key: "t-layouts" }, [
                           _vm._v("Submit Curricula"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Attendance"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Upload Notes"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Assignment"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Manage Class Room"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                this.user.roleid == 1 || this.user.roleid == 2
+                  ? _c(
+                      "a",
+                      { staticClass: "waves-effect", attrs: { href: "#" } },
+                      [
+                        _c("i", { staticClass: "bx bx-layout" }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-layouts" }, [
+                          _vm._v("Manage Subject Students"),
                         ]),
                       ]
                     )
