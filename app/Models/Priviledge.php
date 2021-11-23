@@ -12,7 +12,6 @@ class Priviledge extends Model
 {
     use HasFactory, SoftDeletes, SanctumHasApiTokens;
 
-
     protected $fillable = [
         'priviledge',
     ];

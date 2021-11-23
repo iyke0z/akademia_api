@@ -5,23 +5,23 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <router-link to="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo.svg" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
                                     <img src="assets/images/logo-dark.png" alt="" height="17">
                                 </span>
-                            </a>
+                            </router-link>
 
-                            <a href="index.html" class="logo logo-light">
+                            <router-link to="index.html" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo-light.svg" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
                                     <img src="assets/images/logo-light.png" alt="" height="19">
                                 </span>
-                            </a>
+                            </router-link>
                         </div>
 
                         <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
@@ -82,12 +82,12 @@
                                             <h6 class="m-0" key="t-notifications"> Notifications </h6>
                                         </div>
                                         <div class="col-auto">
-                                            <a href="#!" class="small" key="t-view-all"> View All</a>
+                                            <router-link to="#!" class="small" key="t-view-all"> View All</router-link>
                                         </div>
                                     </div>
                                 </div>
                                 <div data-simplebar style="max-height: 230px;">
-                                    <a href="#" class="text-reset notification-item">
+                                    <router-link to="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="avatar-xs me-3">
                                                 <span class="avatar-title bg-primary rounded-circle font-size-16">
@@ -102,8 +102,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
-                                    <a href="#" @click.prevent class="text-reset notification-item">
+                                    </router-link>
+                                    <router-link to="#" @click.prevent class="text-reset notification-item">
                                         <div class="d-flex">
                                             <img src="assets/images/users/avatar-3.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
@@ -115,8 +115,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
-                                    <a href="#" class="text-reset notification-item">
+                                    </router-link>
+                                    <router-link to="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="avatar-xs me-3">
                                                 <span class="avatar-title bg-success rounded-circle font-size-16">
@@ -131,9 +131,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </router-link>
 
-                                    <a href="#" class="text-reset notification-item">
+                                    <router-link to="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <img src="assets/images/users/avatar-4.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
@@ -145,12 +145,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </router-link>
                                 </div>
                                 <div class="p-2 border-top d-grid">
-                                    <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <router-link class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
                                         <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View More..</span>
-                                    </a>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -165,12 +165,12 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
-                                <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></a>
-                                <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
-                                <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                                <router-link class="dropdown-item" to="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></router-link>
+                                <router-link class="dropdown-item" to="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></router-link>
+                                <router-link class="dropdown-item d-block" to="#"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">Settings</span></router-link>
+                                <router-link class="dropdown-item" to="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></router-link>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#" @click.prevent="logout"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                                <router-link class="dropdown-item text-danger" to="#" @click.prevent="logout"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></router-link>
                             </div>
                         </div>
 
@@ -193,56 +193,111 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" key="t-menu">Menu</li>
+                            <li class="menu-title" key="t-menu">Admin Menu</li>
 
                             <li>
-                                <a href="#dashboardmenu" data-toggle="collapse" class="waves-effect">
-                                    <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
-                                    <span key="t-dashboards">Dashboards</span>
-                                </a>
-                                <ul class="sub-menu collapse" id="dashboardmenu" aria-expanded="false">
-                                    <li><a href="index.html" key="t-default">Default</a></li>
-                                    <li><a href="dashboard-saas.html" key="t-saas">Saas</a></li>
-                                    <li><a href="dashboard-crypto.html" key="t-crypto">Crypto</a></li>
-                                    <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
-                                </ul>
-                            </li>
+                                <router-link to="/priviledge" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Priviledges</span>
+                                </router-link>
 
+                               <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">School</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Branches</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Class Groups</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Class Rooms</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Students</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Staff and Tutors</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Parents</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Time Table</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Calendar</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Hostel</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Assign Priviledges</span>
+                                </router-link>
+                                <router-link to="#dashboardmenu" data-toggle="collapse" class="waves-effect" v-if="user.roleid==1">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Feedback</span>
+                                </router-link>
+
+
+
+
+                            <li class="menu-title" key="t-menu">Teacher Menu</li>
                             <li>
-                                <a href="#layout-menu" data-toggle="collapse" class="has-arrow waves-effect">
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
                                     <i class="bx bx-layout"></i>
-                                    <span key="t-layouts">Layouts</span>
-                                </a>
-                                <ul class="sub-menu collapse" id="layout-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="" class="has-arrow" key="t-vertical">Vertical</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Light Sidebar</a></li>
-                                            <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                            <li><a href="layouts-icon-sidebar.html" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                            <li><a href="layouts-boxed.html" key="t-boxed-width">Boxed Width</a></li>
-                                            <li><a href="layouts-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-colored-sidebar.html" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                            <li><a href="layouts-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="has-arrow" key="t-horizontal">Horizontal</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-horizontal.html" key="t-horizontal">Horizontal</a></li>
-                                            <li><a href="layouts-hori-topbar-light.html" key="t-topbar-light">Topbar light</a></li>
-                                            <li><a href="layouts-hori-boxed-width.html" key="t-boxed-width">Boxed width</a></li>
-                                            <li><a href="layouts-hori-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-hori-colored-header.html" key="t-colored-topbar">Colored Header</a></li>
-                                            <li><a href="layouts-hori-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                    <span key="t-layouts">Submit Curricula</span>
+                                </router-link>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Attendance</span>
+                                </router-link>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Upload Notes</span>
+                                </router-link>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Assignment</span>
+                                </router-link>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Manage Class Room</span>
+                                </router-link>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Manage Subject Students</span>
+                                </router-link>
                             </li>
 
+                            <li class="menu-title" key="t-menu">Student Menu</li>
+                            <li>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">Veiw Time Table</span>
+                                </router-link>
 
+                            </li>
 
+                            <li class="menu-title" key="t-menu">Parent Menu</li>
+                            <li>
+                                <router-link to="#" class="waves-effect" v-if="this.user.roleid == 1  || this.user.roleid == 2">
+                                    <i class="bx bx-layout"></i>
+                                    <span key="t-layouts">View Child Result</span>
+                                </router-link>
+
+                            </li>
 
 
                         </ul>
