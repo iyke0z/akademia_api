@@ -24,10 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/authenticated', function () {
     return true;
 });
-Route::get('country/', function () {
-    $country = Country::all();
-    return response()->json($country);
-});
+
 Route::get('state/{countryid}', function ($countryid) {
     $state = State::where('countryid', $countryid)->get();
     return response()->json($state);
@@ -40,4 +37,6 @@ Route::get('city/{stateid}', function ($stateid) {
 Route::post('/schregister', [\App\Http\Controllers\Auth\RegisterController::class, 'registerSchool'])->name('registerschool');
 Route::post('/login',[\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::post('/logout',[\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::post('/country',[\App\Http\Controllers\CountryController::class, 'store']);
+Route::get('/country',[\App\Http\Controllers\CountryController::class, 'index']);
 
